@@ -1,0 +1,26 @@
+---
+title: Find em'
+layout: default
+---
+
+<div>
+  <ul>
+  {% for state in site.data.states %}
+    <li class="findemItem unclicked" onclick="switchClicked(this)">{{ state.NAME }}</li>
+  {% endfor %}
+  </ul>
+</div>
+
+<script>
+  function switchClicked(el) {
+    console.log(el);
+    console.log(el.classList);
+    // el.classList.toggle(clicked);
+    console.log(el.classList.contains("unclicked"));
+    if (el.classList.contains("unclicked")) {
+      el.classList.replace("unclicked", "clicked");
+    } else {
+      el.classList.replace("clicked", "unclicked");
+    }
+  }
+</script>

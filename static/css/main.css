@@ -1,0 +1,17 @@
+.findemItem {
+  padding: 1px;
+  margin: 10px;
+}
+
+.findemItem:hover {
+  color: #555;
+  cursor: pointer;
+}
+
+.findemItem.unclicked {
+  color: #000;
+}
+
+.findemItem.clicked {
+  color: #bbb;
+}

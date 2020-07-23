@@ -1,0 +1,13 @@
+---
+title: Home
+layout: default
+---
+
+{% for p in site.pages %}
+<p>{{p.title}}</p>
+{% endfor %}
+
+
+{% for c in site.collections %}
+<p>{{c.title}}</p>
+{% endfor %}
