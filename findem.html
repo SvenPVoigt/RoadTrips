@@ -4,23 +4,53 @@ layout: default
 ---
 
 <div>
-  <ul>
+  <p id="counter"></p>
+  <ul id="unfound">
   {% for state in site.data.states %}
     <li class="findemItem unclicked" onclick="switchClicked(this)">{{ state.NAME }}</li>
   {% endfor %}
   </ul>
+  <ul id="found">
+  </ul>
 </div>
 
 <script>
+  // var data;
+  // var unfoundList = document.getElementById("unfound");
+  // var foundList = document.getElementById("found");
+  var count = 0;
+  var counter = document.getElementById("counter");
+  // console.log(counter);
+  counter.innerHTML = `Found ${count}/65.`
+
+  function makeLists() {
+  }
+
   function switchClicked(el) {
-    console.log(el);
-    console.log(el.classList);
+    // console.log(el);
+    // console.log(el.classList);
     // el.classList.toggle(clicked);
-    console.log(el.classList.contains("unclicked"));
+    // console.log(el.classList.contains("unclicked"));
     if (el.classList.contains("unclicked")) {
       el.classList.replace("unclicked", "clicked");
+      count += 1;
     } else {
       el.classList.replace("clicked", "unclicked");
+      count -= 1;
     }
+
+    counter.innerHTML = `Found ${count}/65.`
   }
+
+  // fetch("{{ site.baseurl }}/static/data/usStates.csv")
+  //   .then(function(res) { console.log(res); return res.text(); })
+  //   .then(d => d.split("\n"))
+  //   .then(function(d) {
+  //     let e = [];
+  //     for (i=0;i<d.length;i++) {
+  //       e.push(d[i].split(",")[1]+":0");
+  //     }
+  //     return e;
+  //   })
+  //   .then(d => console.log(d.join(",")));
 </script>
