@@ -1,0 +1,76 @@
+---
+title: Sudoku
+layout: default
+---
+
+<div id="options" style="margin-top: 6px;">
+  Number of major columns:
+  <input id="n" type="number"></input>
+  <button onclick="makeBoard()">Submit</button>
+</div>
+<div class="sudoku board" id="board"></div>
+
+<script>
+  var n;
+  var solution = [
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,5,6,7,8,9]
+  ];
+
+  function makeBoard() {
+    n = document.getElementById("n").value;
+    console.log(n)
+    document.getElementById("options").innerHTML = "";
+
+    var board = document.getElementById("board");
+
+    board.style.gridTemplateColumns = `repeat(${n**2}, 10fr)`;
+
+    for (i=0;i<(n**2);i++) {
+      for (j=0;j<(n**2);j++) {
+        let cell = document.createElement("div")
+        cell.className = "sudoku cell"
+        cell.height = "10fr";
+        cell.width = "10fr";
+        if (j%n==0) {
+          cell.style.borderLeft = "4px solid black";
+        } else if (j==(n**2-1)) {
+          cell.style.borderRight = "4px solid black";
+        }
+        if (i%n==0) {
+          cell.style.borderTop = "4px solid black";
+        } else if (i==(n**2-1)) {
+          cell.style.borderBottom = "4px solid black";
+        }
+        cell.id = `${i},${j}`
+        cell.onclick = selectCell;
+
+        board.appendChild(cell);
+
+      }
+    }
+  }
+
+  function selectCell() {
+    if (this.classList.contains("selected")) {
+      this.classList.remove("selected");
+    } else {
+      for (i=0;i<(n**2);i++) {
+        for (j=0;j<(n**2);j++) {
+          document.getElementById(`${i},${j}`).classList.remove("selected");
+        }
+      }
+      this.classList.add("selected");
+    }
+    // this.classList.toggle("selected");
+    console.log(this.classList.contains("selected"));
+  }
+
+</script>

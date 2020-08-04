@@ -1,0 +1,22 @@
+.sudoku.board {
+  border: 0px solid black;
+  padding: 10px;
+  margin: 0px;
+  display: grid;
+  width: 80vh;
+  height: 80vh;
+}
+
+.sudoku.cell {
+  border: 0.5px solid black;
+  padding: 2px;
+  margin: 0px;
+}
+
+.sudoku.cell.selected {
+  background-color: orange;
+}
+
+.sudoku.cell.constant {
+  background-color: gray;
+}
