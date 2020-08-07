@@ -55,7 +55,29 @@ function makeBoard() {
 
     }
   }
+
+  let nextInds = [0,0];
+
+  generateBoard(nextInds);
 }
+
+function generateBoard(nextInds) {
+  let previousTime = Date.now()
+
+  if (nextInds) {
+    // if ( (Date.now() - previousTime) > 200 )  {
+    previousTime = Date.now()
+    console.log('Outside');
+    nextInds = sg.nextSquare(nextInds[0], nextInds[1]);
+    updateBoard();
+
+    setTimeout(function() { generateBoard(nextInds); }, 200);
+  } else {
+    console.log('Board Generated');
+    return;
+  }
+}
+
 
 function selectCell() {
   if (this.classList.contains("selected")) {
