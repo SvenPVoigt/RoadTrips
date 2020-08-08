@@ -1,2 +1,0 @@
-SudokuAI = function(n) {
-}

@@ -117,7 +117,7 @@ SudokuGame.prototype.solveCell = function(i,j) {
       !this.asCol[j].has(x) &&
       !this.asGrid[this.getGridCell(i,j)].has(x)
     );
-    console.log(difference);
+    // console.log(difference);
 
     if (difference.length > 0) {
       val = difference[Math.floor( Math.random() * difference.length )];

@@ -26,17 +26,18 @@ function makeBoard() {
 
   var board = document.getElementById("board");
 
-  board.style.gridTemplateColumns = `repeat(${n**2}, 10fr)`;
-  board.style.gridTemplateRows = `repeat(${n**2}, 10fr)`;
+  board.style.gridTemplateColumns = `repeat(${n**2}, ${70/(n**2)}vh)`;
+  board.style.gridTemplateRows = `repeat(${n**2}, ${70/(n**2)}vh)`;
 
   for (i=0;i<(n**2);i++) {
     for (j=0;j<(n**2);j++) {
       let cell = document.createElement("div")
 
       cell.className = "sudoku cell"
-      cell.height = "10fr";
-      cell.width = "10fr";
-      cell.id = `${i},${j}`
+      cell.height = `${70/(n**2)}vh`;
+      cell.width = `${70/(n**2)}vh`;
+      cell.style.fontSize = `${40/(n**2)}vh`;
+      cell.id = `${i},${j}`;
       cell.onclick = selectCell;
 
       if (j%n==0) {
@@ -73,7 +74,7 @@ function generateBoard(nextInds) {
     nextInds = sg.solveCell(nextInds[0], nextInds[1]);
     updateBoard();
 
-    setTimeout(function() { generateBoard(nextInds); }, 100);
+    setTimeout(function() { generateBoard(nextInds); }, (500 / (n**2)) );
   } else {
     console.log('Board Generated');
     return;
