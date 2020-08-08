@@ -56,22 +56,24 @@ function makeBoard() {
     }
   }
 
-  let nextInds = [0,0];
+  let actions = document.getElementById("actions");
+  actions.innerHTML = "<button onclick='generateBoardInit()'>Generate Board</button>";
+}
 
+function generateBoardInit() {
+  let nextInds = [0,0];
   generateBoard(nextInds);
 }
 
 function generateBoard(nextInds) {
-  let previousTime = Date.now()
-
   if (nextInds) {
     // if ( (Date.now() - previousTime) > 200 )  {
-    previousTime = Date.now()
-    console.log('Outside');
-    nextInds = sg.nextSquare(nextInds[0], nextInds[1]);
+    // previousTime = Date.now()
+    // console.log('Outside');
+    nextInds = sg.solveCell(nextInds[0], nextInds[1]);
     updateBoard();
 
-    setTimeout(function() { generateBoard(nextInds); }, 200);
+    setTimeout(function() { generateBoard(nextInds); }, 100);
   } else {
     console.log('Board Generated');
     return;

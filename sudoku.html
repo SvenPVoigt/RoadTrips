@@ -3,12 +3,19 @@ title: Sudoku
 layout: default
 ---
 
-<div id="options" style="margin-top: 6px;">
-  Number of major columns:
-  <input id="n" type="number"></input>
-  <button onclick="makeBoard()">Submit</button>
+<div id="menu" style="display: grid; grid-template-columns: auto auto;">
+  <div id="options" style="margin-top: 6px;">
+    Number of major columns:
+    <input id="n" type="number"></input>
+    <button onclick="makeBoard()">Submit</button>
+  </div>
+
+  <div id="actions" style="margin-top: 6px;">
+  </div>
 </div>
-<div class="sudoku board" id="board"></div>
+
+<div class="sudoku board" id="board">
+</div>
 
 <script src="{{ site.baseurl }}/static/js/sudokuRules.js"></script>
 <script src="{{ site.baseurl }}/static/js/sudokuUI.js"></script>
