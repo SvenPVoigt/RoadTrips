@@ -27,40 +27,40 @@ MO,Missouri,
 MT,Montana,
 NE,Nebraska,
 NV,Nevada,
-NH,NewHampshire,
-NJ,NewJersey,
-NM,NewMexico,
-NY,NewYork,
-NC,NorthCarolina,
-ND,NorthDakota,
+NH,New Hampshire,
+NJ,New Jersey,
+NM,New Mexico,
+NY,New York,
+NC,North Carolina,
+ND,North Dakota,
 OH,Ohio,
 OK,Oklahoma,
 OR,Oregon,
 PA,Pennsylvania,
-RI,RhodeIsland,
-SC,SouthCarolina,
-SD,SouthDakota,
+RI,Rhode Island,
+SC,South Carolina,
+SD,South Dakota,
 TN,Tennessee,
 TX,Texas,
 UT,Utah,
 VT,Vermont,
 VA,Virginia,
 WA,Washington,
-WV,WestVirginia,
+WV,West Virginia,
 WI,Wisconsin,
 WY,Wyoming,
-AS,AmericanSamoa,territory
-DC,DistrictofColumbia,territory
-FM,FederatedStatesofMicronesia,territory
+AS,American Samoa,territory
+DC,District of Columbia,territory
+FM,Federated States of Micronesia,territory
 GU,Guam,territory
-MH,MarshallIslands,territory
-MP,NorthernMarianaIslands,territory
+MH,Marshall Islands,territory
+MP,Northern Mariana Islands,territory
 PW,Palau,territory
-PR,PuertoRico,territory
-VI,VirginIslands,territory
-AE,ArmedForcesAfrica,military
-AA,ArmedForcesAmericas,military
-AE,ArmedForcesCanada,military
-AE,ArmedForcesEurope,military
-AE,ArmedForcesMiddleEast,military
-AP,ArmedForcesPacific,military
+PR,Puerto Rico,territory
+VI,Virgin Islands,territory
+AE,Armed Forces Africa,military
+AA,Armed Forces Americas,military
+AE,Armed Forces Canada,military
+AE,Armed Forces Europe,military
+AE,Armed Forces Middle East,military
+AP,Armed Forces Pacific,military

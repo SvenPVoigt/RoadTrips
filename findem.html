@@ -5,6 +5,7 @@ layout: default
 
 <div>
   <p id="counter"></p>
+  <a id="reset" href="/RoadTrips/findem.html">Reset</a>
   <ul id="unfound">
   {% for state in site.data.states %}
     <li id="{{ state.NAME }}" statename="{{ state.NAME }}" class="findemItem unclicked" onclick="switchClicked(this)">{{ state.NAME }}</li>
@@ -17,10 +18,10 @@ layout: default
 <script>
   // var allStates = new Set([{% for state in site.data.states %} {{ state.NAME }}, {% endfor %}]);
   var counter = document.getElementById("counter");
-  var states = new Set(window.location.search.split("+").map(v => v.replace("?", "")));
+  var states = new Set(window.location.search.split("+").map(v => v.replaceAll("?", "").replaceAll(" ", "_")));
   states.delete("");
   states.forEach(v => {
-    document.getElementById(v).classList.replace("unclicked", "clicked");
+    document.getElementById(v.replaceAll("_", " ")).classList.replace("unclicked", "clicked");
   });
   var count = states.size;
   
@@ -30,16 +31,17 @@ layout: default
   function switchClicked(el) {
     if (el.classList.contains("unclicked")) {
       el.classList.replace("unclicked", "clicked");
-      states.add(el.getAttribute("statename"));
+      states.add(el.getAttribute("statename").replaceAll(" ", "_"));
       window.history.pushState("", "", "?" + Array.from(states).join("+"));
       count += 1;
     } else {
       el.classList.replace("clicked", "unclicked");
-      states.delete(el.getAttribute("statename"));
+      states.delete(el.getAttribute("statename").replaceAll(" ", "_"));
       window.history.pushState("", "", "?" + Array.from(states).join("+"));
       count -= 1;
     }
 
     counter.innerHTML = `Found ${count}/65.`
   }
+  
 </script>
